@@ -2,7 +2,7 @@
 import * as fs from "node:fs/promises";
 import * as yaml from "js-yaml";
 
-const CONFIG_PATH = "./assets/config.yaml";
+const CONFIG_PATH = "./assets/config.yml";
 
 export interface ServiceItem {
   name: string;
