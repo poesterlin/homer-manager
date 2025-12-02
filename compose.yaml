@@ -2,12 +2,7 @@ services:
   homer-manager:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: homer-manager
     ports:
       - "3000:3000"
     volumes:
       - ./assets:/app/assets
-    environment:
-      - NODE_ENV=production
-    restart: unless-stopped
