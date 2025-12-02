@@ -12,8 +12,8 @@ const CONFIG_PATH = path.resolve("./assets/config.yml");
 export interface ServiceItem {
   name: string;
   logo: string;
-  tag: string;
-  tagstyle: string;
+  tag?: string;
+  tagstyle?: string;
   url: string;
   target: string;
 }
