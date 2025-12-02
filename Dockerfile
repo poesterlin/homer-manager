@@ -18,7 +18,7 @@ COPY . .
 RUN bun run build
 
 # --- Production stage ---
-FROM oven/bun:1-slim AS production
+FROM oven/bun:1 AS production
 
 WORKDIR /app
 
@@ -28,7 +28,5 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
 
 ENV NODE_ENV=production
-ENV PORT=3000
-ENV HOST=0.0.0.0
 
 CMD ["bun", "./build/index.js"]
