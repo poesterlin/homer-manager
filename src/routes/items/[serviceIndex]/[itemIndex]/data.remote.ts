@@ -17,6 +17,7 @@ export const updateServiceItem = form(
     serviceIndex: v.number(),
     itemIndex: v.number(),
     name: v.pipe(v.string(), v.nonEmpty()),
+    subtitle: v.optional(v.string()),
     logo: v.string(),
     tag: v.optional(v.string()),
     tagstyle: v.optional(v.string()),
@@ -28,6 +29,7 @@ export const updateServiceItem = form(
     const item = config.services[data.serviceIndex]?.items[data.itemIndex];
     if (item) {
       item.name = data.name;
+      item.subtitle = data.subtitle;
       item.logo = data.logo;
       item.tag = data.tag;
       item.tagstyle = data.tagstyle;

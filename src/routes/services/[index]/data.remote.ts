@@ -31,6 +31,7 @@ export const addServiceItem = form(
   v.object({
     categoryIndex: v.number(),
     name: v.pipe(v.string(), v.nonEmpty()),
+    subtitle: v.optional(v.string()),
     logo: v.string(),
     tag: v.string(),
     tagstyle: v.string(),
@@ -42,6 +43,7 @@ export const addServiceItem = form(
     if (config.services[data.categoryIndex]) {
       config.services[data.categoryIndex].items.push({
         name: data.name,
+        subtitle: data.subtitle,
         logo: data.logo || "assets/tools/default.png",
         tag: data.tag || "App",
         tagstyle: data.tagstyle || "is-info",

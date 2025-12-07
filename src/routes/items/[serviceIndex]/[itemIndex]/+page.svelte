@@ -44,6 +44,14 @@
         </label>
 
         <label>
+          Subtitle
+          <input
+            {...updateServiceItem.fields.subtitle.as("text")}
+            value={item.subtitle}
+          />
+        </label>
+
+        <label>
           URL *
           <input
             {...updateServiceItem.fields.url.as("text")}

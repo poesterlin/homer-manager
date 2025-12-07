@@ -63,6 +63,9 @@
               <img src="/{item.logo}" alt="" width="32" height="32" />
               <div>
                 <strong>{item.name}</strong>
+                {#if item.subtitle}
+                  <small>{item.subtitle}</small>
+                {/if}
                 <small>{item.url}</small>
               </div>
               <span class="tag">{item.tag}</span>
@@ -128,6 +131,14 @@
           <label>
             Name *
             <input {...addServiceItem.fields.name.as("text")} />
+          </label>
+
+          <label>
+            Subtitle
+            <input
+              {...addServiceItem.fields.subtitle.as("text")}
+              placeholder="Another application"
+            />
           </label>
 
           <label>
